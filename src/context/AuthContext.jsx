@@ -7,7 +7,6 @@ export const AuthProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
 
-  // Load from localStorage
   useEffect(() => {
     const stored = localStorage.getItem("bloodDonorUser");
     if (stored) {
@@ -15,7 +14,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // ✅ LOGIN
   const login = async (email, password) => {
     try {
       const res = await API.post("/auth/login", { email, password });
@@ -30,7 +28,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ✅ REGISTER (ADD THIS)
   const register = async (name, email, password) => {
     try {
       await API.post("/auth/register", {
@@ -47,7 +44,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // LOGOUT
   const logout = () => {
     setUser(null);
     localStorage.removeItem("bloodDonorUser");
@@ -57,7 +53,7 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={{
       user,
       login,
-      register, // ✅ expose register
+      register, 
       logout,
       isLoggedIn: !!user
     }}>

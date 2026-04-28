@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-// COMMON STYLES
 const containerStyle = {
   display: "flex",
   justifyContent: "center",
-  alignItems: "flex-start",   // 🔥 change here
-  paddingTop: "100px",        // 🔥 add this
+  alignItems: "flex-start",  
+  paddingTop: "100px",        
   minHeight: "100vh",
   background: "linear-gradient(to right, #d8cecc, #fbfafa)"
 };
@@ -49,7 +48,6 @@ const linkStyle = {
 };
 
 
-// ================= LOGIN =================
 const Login = () => {
 
   const [email, setEmail] = useState("");
@@ -124,7 +122,6 @@ const Login = () => {
 };
 
 
-// ================= REGISTER =================
 const Register = () => {
 
   const [form, setForm] = useState({

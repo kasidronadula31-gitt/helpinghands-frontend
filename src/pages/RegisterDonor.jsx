@@ -16,7 +16,7 @@ const RegisterDonor = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form); // later connect API
+    console.log(form); 
     alert("Donor registered!");
   };
 

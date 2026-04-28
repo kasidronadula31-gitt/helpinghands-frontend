@@ -7,7 +7,6 @@ const Profile = () => {
   const { user, logout, isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
-  // 🔒 Not logged in
   if (!isLoggedIn || !user) {
     return (
       <div className="page-wrapper">
@@ -35,14 +34,12 @@ const Profile = () => {
 
       <div className="profile-card">
 
-        {/* Header */}
         <div className="profile-header">
           <div style={{ fontSize: "50px" }}>👤</div>
           <h2>{user.name}</h2>
           <p>{user.email}</p>
         </div>
 
-        {/* Info */}
         <div className="profile-body">
 
           <div className="profile-row">
@@ -53,7 +50,6 @@ const Profile = () => {
             <strong>Email:</strong> {user.email}
           </div>
 
-          {/* Optional fields (if exist) */}
           {user.phone && (
             <div className="profile-row">
               <strong>Phone:</strong> {user.phone}
@@ -68,7 +64,6 @@ const Profile = () => {
 
         </div>
 
-        {/* Actions */}
         <div style={{ marginTop: "20px" }}>
 
           <button

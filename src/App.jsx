@@ -7,11 +7,8 @@ import AddDonor from "./pages/AddDonor";
 import Profile from "./pages/Profile";
 import { Login, Register } from "./pages/AuthPages";
 import NotFound from "./pages/NotFound";
-// import Toast from "./components/ui/toast";
 import BecomeDonor from "./pages/BecomeDonor";
 
-
-// 🔥 NEW COMPONENT (IMPORTANT)
 const AppContent = () => {
 
   const { isLoggedIn } = useAuth();
@@ -19,7 +16,6 @@ const AppContent = () => {
   return (
     <BrowserRouter>
 
-      {/* <Toast /> */}
 
       <div className="app-container">
         <Navbar />
@@ -36,11 +32,9 @@ const AppContent = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-
-        {/* ✅ FOOTER CONDITION */}
         
           <footer className="footer">
-            🩸 BloodConnect — Saving Lives, One Drop at a Time |
+            🩸 Helping Hands — Saving Lives, One Drop at a Time |
             Built with React + Spring Boot + MySQL
           </footer>
       
@@ -51,8 +45,6 @@ const AppContent = () => {
   );
 };
 
-
-// 🔥 MAIN APP
 const App = () => {
   return (
     <AuthProvider>

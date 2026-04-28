@@ -2,7 +2,6 @@ import { Container, TextField, Button, Typography, MenuItem } from "@mui/materia
 import { useState } from "react";
 import API from "../services/api";
 
-// ✅ Fixed blood groups
 const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
 function BecomeDonor(){
@@ -16,7 +15,6 @@ function BecomeDonor(){
 
   const registerDonor = async () => {
 
-    // ✅ validation
     if(!name || !bloodGroup || !phone || !email){
       alert("Please fill all fields");
       return;
@@ -80,7 +78,6 @@ function BecomeDonor(){
         onChange={(e)=>setName(e.target.value)}
       />
 
-      {/* ✅ Dropdown instead of text */}
       <TextField
         select
         label="Blood Group"

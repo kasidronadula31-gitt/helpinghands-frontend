@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import API from "../services/api";
 
-// ✅ Static blood groups
 const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
 const AddDonor = () => {
@@ -22,7 +21,6 @@ const AddDonor = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  // 🔒 Not logged in
   if (!isLoggedIn) {
     return (
       <div className="page-wrapper">
@@ -36,7 +34,6 @@ const AddDonor = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // ✅ GET USER LOCATION
   const getLocation = () => {
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
@@ -51,7 +48,6 @@ const AddDonor = () => {
     });
   };
 
-  // ✅ SUBMIT TO BACKEND
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -86,7 +82,6 @@ const AddDonor = () => {
     }
   };
 
-  // ✅ SUCCESS UI
   if (success) {
     return (
       <div className="page-wrapper">

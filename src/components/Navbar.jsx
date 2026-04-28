@@ -11,11 +11,10 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/"); // ✅ better UX
+    navigate("/"); 
     setMenuOpen(false);
   };
 
-  // ✅ FIX: works even with query params
   const isActive = (path) =>
     location.pathname.startsWith(path) ? "active" : "";
 
@@ -23,7 +22,6 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-inner">
 
-        {/* Logo */}
         <Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
           <span style={{ fontSize: "25px" }}>🩸</span>
           <div>
@@ -33,7 +31,6 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Hamburger */}
         <button
           className="hamburger-btn"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -43,7 +40,6 @@ const Navbar = () => {
           <span className={`hamburger-line ${menuOpen ? "open-3" : ""}`} />
         </button>
 
-        {/* Links */}
         <ul className={`navbar-links ${menuOpen ? "mobile-open" : ""}`}>
 
           <li>
@@ -61,7 +57,6 @@ const Navbar = () => {
           {isLoggedIn ? (
             <>
               <li>
-                {/* ✅ FIXED ROUTE */}
                 <Link to="/become-donor" className={isActive("/become-donor")} onClick={() => setMenuOpen(false)}>
                   Become a Donor
                 </Link>

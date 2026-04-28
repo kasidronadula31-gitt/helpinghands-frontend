@@ -15,7 +15,6 @@ const SearchDonors = () => {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
-  // ================= GET LOCATION =================
   const getLocation = () =>
     new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
@@ -28,7 +27,6 @@ const SearchDonors = () => {
       );
     });
 
-  // ================= SEARCH =================
   const runSearch = async (bg, dist) => {
 
     if (!bg || !dist || dist <= 0) {
@@ -56,7 +54,6 @@ const SearchDonors = () => {
     }
   };
 
-  // ================= LOAD FROM URL =================
   useEffect(() => {
     const bg = searchParams.get("bloodGroup");
     const dist = searchParams.get("distance");
@@ -68,7 +65,6 @@ const SearchDonors = () => {
     }
   }, [searchParams]);
 
-  // ================= SUBMIT =================
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -86,7 +82,6 @@ const SearchDonors = () => {
       background: "#fefcfb"
     }}>
 
-      {/* ===== FORM CARD ===== */}
       <div style={{
         width: "400px",
         background: "#fff",
@@ -164,7 +159,6 @@ const SearchDonors = () => {
 
       </div>
 
-      {/* ===== RESULTS ===== */}
       {donors.length > 0 && (
         <div style={{
           marginTop: "30px",

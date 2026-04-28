@@ -1,7 +1,6 @@
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { forwardRef } from "react";
 
-// simple class merge
 const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 const NavLink = forwardRef(

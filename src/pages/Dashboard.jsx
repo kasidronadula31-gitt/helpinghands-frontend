@@ -1,10 +1,6 @@
 import {Container,TextField,Button,Typography} from "@mui/material";
 import {useState} from "react";
-
 import API from "../services/api";
-// import DonorCard from "../components/DonorCard";
-// import GoogleMapView from "../components/GoogleMapView";
-
 import {getUserLocation} from "../utils/location";
 import {calculateDistance} from "../utils/distance";
 
